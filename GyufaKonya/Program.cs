@@ -5,19 +5,20 @@ namespace GyufaKonya
     class Program
     {
         private static int gyufaszam = 20;
+        private readonly static int jatekosszam = 5;
         static void Main(string[] args)
         {
             // gyufaszámból elveszünk 1/2/3 db-t > input amig a gyufaszam > 0
             // i a játékos szám
             for (int i = 0; gyufaszam > 0; i++)
             {
-                Console.WriteLine("Játékos szama: {0}", (i%2)+1);
+                Console.WriteLine("Játékos szama: {0}", (i%jatekosszam)+1);
                 int gyufaminusz = AdatBekeres("Add meg hany gyufat vennél el");
                 gyufaszam -= gyufaminusz;
                 Console.WriteLine("Gyufák száma: {0}", gyufaszam);
                 if (gyufaszam <= 0)
                 { 
-                    Console.WriteLine("Vesztes szama: {0}", (i % 2 + 1));
+                    Console.WriteLine("Vesztes szama: {0}", (i % jatekosszam + 1));
                 }
             }
             Console.WriteLine("Játék vége");
